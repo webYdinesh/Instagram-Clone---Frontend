@@ -1,0 +1,72 @@
+@import "../../variables";
+
+.showfollowmodel-container {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background: rgba($color: #000000, $alpha: .8);
+
+    .follow-model-wrapper {
+        border-radius: .5rem;
+        width: 400px;
+        height: 300px;
+        background: $gray-bg-color;
+
+        .follow-model-header {
+            position: relative;
+            padding: .6rem;
+            border-bottom: 1px solid $light-border-color;
+
+            button {
+                position: absolute;
+                top: .7rem;
+                right: 1rem;
+                background: transparent;
+            }
+
+        }
+
+        .follow-model-body {
+            padding: .5rem;
+
+            .user-container {
+                justify-content: space-between;
+                padding: .5rem 2rem;
+
+                .user-img-username {
+                    gap: 1.5rem;
+
+                    .user-img {
+                        img {
+                            width: 4.2rem;
+                            border-radius: 50%;
+                        }
+                    }
+
+                    .user-name {
+                        h6 {
+                            font-size: 1.3rem;
+                            font-weight: 500;
+                        }
+                    }
+
+                }
+
+                .model-btn {
+                    button {
+                        background: $primary-btn-color;
+                        padding: .5rem 1rem;
+                        font-size: 1.3rem;
+                        color: $white-color;
+                        border-radius: .3rem;
+
+                    }
+                }
+            }
+
+        }
+    }
+}

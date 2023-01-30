@@ -1,0 +1,42 @@
+@import "../../variables";
+
+.PostOptionModel-container {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background: rgba($color: #000000, $alpha: .8);
+
+    .post-option-wrapper {
+        border-radius: .5rem;
+        width: 400px;
+        min-height: 100px;
+        background: $gray-bg-color;
+
+        justify-content: flex-start;
+        padding: .5rem 0rem;
+        border-radius: .6rem;
+
+        button {
+            width: 100%;
+            padding: 1.2rem 1.5rem;
+            font-size: 1.5rem;
+            border-bottom: 1px solid $light-border-color ;
+            font-weight: 500;
+            background-color: transparent;
+            color: $link-text-color;
+
+            &:is(.delete) {
+                color: #ED4956;
+                font-weight: 600;
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+    }
+}

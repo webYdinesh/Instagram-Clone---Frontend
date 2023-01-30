@@ -1,0 +1,26 @@
+@import "../../variables";
+
+.avatar-container {
+    .avatar {
+        background-color: transparent;
+        gap: .5rem;
+
+        img {
+            border-radius: 50%;
+            width: 6rem;
+            object-fit: cover;
+            padding: .3rem;
+            border: 2px solid $pink-color;
+
+        }
+
+        p {
+            width: 80px;
+            font-size: 1.3rem;
+            font-weight: 500;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            color: #fff;
+        }
+    }
+}

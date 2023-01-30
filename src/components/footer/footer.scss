@@ -1,0 +1,23 @@
+@import "./../../variables";
+
+footer {
+    width: 50%;
+
+    .footer-links {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+
+        li {
+
+            a {
+                font-size: 1.2rem;
+                color: $link-text-color;
+
+                &:hover {
+                    border-bottom: 1px solid $link-text-color;
+                }
+
+            }
+        }
+    }
+}

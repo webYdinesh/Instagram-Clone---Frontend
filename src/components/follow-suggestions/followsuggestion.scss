@@ -1,0 +1,74 @@
+@import "../../variables";
+
+.suggestion-container {
+    width: 400px;
+    height: 100vh;
+    padding-top: 2rem;
+
+    .user-profile {
+        justify-content: space-between;
+
+        .image-text-wrapper {
+            justify-content: flex-start;
+            gap: 1.5rem;
+
+            .profile-image {
+                cursor: pointer;
+
+                img {
+                    width: 6rem;
+                    border-radius: 50%;
+                }
+
+            }
+
+            .text {
+                h6 {
+                    font-size: 1.3rem;
+                    font-weight: 500;
+                    cursor: pointer;
+                    width: max-content;
+                    border-bottom: 1px solid #000;
+
+                    &:hover {
+                        border-bottom: 1px solid $primary-bg-color;
+                    }
+                }
+
+                p {
+                    font-size: 1.4rem;
+                    color: $link-text-color;
+                    font-weight: 500;
+
+                }
+            }
+        }
+
+        .profile-btn {
+            button {
+                background-color: transparent;
+                color: $hover;
+            }
+        }
+    }
+
+    .suggestion-text {
+        margin: 1.7rem 0rem;
+        justify-content: space-between;
+
+        p {
+            font-size: 1.4rem;
+            color: $link-text-color;
+            font-weight: 500;
+
+        }
+
+        button {
+            background-color: transparent;
+            color: $white-color;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+    }
+
+}

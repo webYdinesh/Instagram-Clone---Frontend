@@ -1,0 +1,107 @@
+@import "../../variables";
+
+.single-post-container {
+    max-width: 53rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $light-border-color;
+
+    .single-post {
+        .signle-post-header {
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+
+            .signle-post-header-left {
+                gap: 1rem;
+
+                img {
+                    width: 4rem;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+
+                .inner-text {
+                    h6 {
+                        font-size: 1.4rem;
+                        font-weight: 500;
+                        cursor: pointer;
+                        border: 1px solid #000;
+
+                        &:hover {
+                            border-bottom: 1px solid $primary-bg-color;
+                        }
+                    }
+                }
+            }
+
+            .post-setting {
+                button {
+                    background-color: transparent;
+                }
+            }
+        }
+
+        .post-image-section {
+            img {
+                width: 500px;
+                height: 540px;
+                object-fit: contain;
+            }
+
+            margin-bottom: 1.5rem;
+        }
+
+        .user-react-section {
+            justify-content: space-between;
+
+            .like-comment {
+                gap: 1.7rem;
+
+                button {
+                    background-color: transparent;
+                }
+
+                .like-icon {
+                    animation: liked 400ms forwards;
+                }
+
+                @keyframes liked {
+                    0% {
+                        transform: scale(1.2);
+                    }
+
+                    100% {
+                        transform: scale(1);
+                    }
+                }
+
+                .likeBtn {
+                    fill: red;
+                    background-color: red;
+                }
+            }
+
+            button {
+                background-color: transparent;
+            }
+        }
+
+        .post-footer {
+            p {
+                font-size: 1.4rem;
+                font-weight: 500;
+                line-height: 3;
+            }
+        }
+
+        .post-caption {
+            p {
+                font-size: 1.4rem;
+
+                span {
+                    font-size: 1.3rem;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}

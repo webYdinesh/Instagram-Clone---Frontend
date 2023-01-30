@@ -1,0 +1,24 @@
+@import "../../variables";
+
+.blue-button {
+    width: 100%;
+    padding: 0rem 3rem;
+    margin-bottom: 1rem;
+
+    button {
+        width: 100%;
+        background-color: $primary-btn-color;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: $white-color;
+        padding: 1rem 3rem;
+        border-radius: .5rem;
+        transition: all 400ms ease-in-out;
+        letter-spacing: 1px;
+
+        &:hover {
+            background-color: $hover;
+        }
+    }
+
+}

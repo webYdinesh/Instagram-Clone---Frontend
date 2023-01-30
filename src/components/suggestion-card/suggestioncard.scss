@@ -1,0 +1,43 @@
+@import "../../variables";
+
+.suggestion-user-profile {
+    justify-content: space-between;
+    margin: 2rem 0rem;
+
+    .image-text-wrapper {
+        justify-content: flex-start;
+        gap: 1.5rem;
+
+        .profile-image {
+            img {
+                width: 4.5rem;
+                border-radius: 50%;
+            }
+
+        }
+
+        .text {
+            h6 {
+                font-size: 1.3rem;
+                font-weight: 500;
+            }
+
+            p {
+                font-size: 1.1rem;
+                color: $link-text-color;
+
+            }
+        }
+    }
+
+    .profile-btn {
+        button {
+            background-color: transparent;
+            font-size: 1.3rem;
+            color: $white-color;
+            background-color: $primary-btn-color;
+            padding: .6rem 1.5rem;
+            border-radius: .4rem;
+        }
+    }
+}

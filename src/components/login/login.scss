@@ -1,0 +1,65 @@
+@import "../../variables";
+
+.login-container {
+    gap: 12rem;
+    min-height: 100vh;
+
+    .login-wrapper {
+        width: 40rem;
+        padding: 3rem 2rem;
+        background-color: $white-color;
+        border: 1px solid $border-color;
+
+        .login-title {
+            margin-bottom: 2rem;
+
+            h5 {
+                color: $link-text-color;
+            }
+        }
+
+        form {
+            gap: 1.5rem;
+
+            .input-wrapper {
+                width: 270px;
+
+                &:nth-child(2) {
+                    margin-bottom: 1.5rem;
+                }
+
+                input {
+                    border: 1px solid $border-color;
+                    background-color: $primary-bg-color;
+                    height: 4rem;
+                    width: 100%;
+                    padding-left: 1rem;
+                    border-radius: .5rem;
+                    font-size: 1.4rem;
+                    outline: none;
+
+
+                }
+            }
+        }
+
+        .login-redirect {
+            margin: 1.7rem 0rem;
+
+            span {
+                font-size: 1.5rem;
+                color: $dark-color;
+
+                a {
+                    font-weight: 500;
+                    color: $hover;
+
+                    &:hover {
+                        border-bottom: 1px solid $link-text-color;
+                    }
+
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+@import "../../variables";
+
+.comment-card-container {
+    padding: 1.2rem 0rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1.5rem;
+
+    img {
+        width: 3rem;
+        border-radius: 50%;
+    }
+
+    .comment {
+
+
+        span {
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        p {
+            font-size: 1.3rem;
+
+            display: inline;
+        }
+
+        .timestamp {
+            small {
+                color: $link-text-color;
+                font-size: 1.1rem;
+            }
+        }
+    }
+}

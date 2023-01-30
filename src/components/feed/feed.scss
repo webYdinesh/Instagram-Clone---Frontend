@@ -1,0 +1,25 @@
+.feed-section {
+    min-height: 100vh;
+    width: calc(100% - 18%);
+    align-items: flex-start;
+    padding-top: 3.5rem;
+    gap: 6rem;
+
+    .feed-container {
+
+        .status-section {
+            .status-container {
+                justify-content: flex-start;
+                gap: 1rem;
+            }
+        }
+
+        .posts-section {
+            margin: 5rem 0rem;
+
+            .post-container {
+                gap: 2.5rem;
+            }
+        }
+    }
+}

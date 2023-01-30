@@ -1,0 +1,77 @@
+@import "../../variables";
+
+.upload-reels-model-container {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 300;
+    top: 0;
+    left: 0;
+    background: rgba($color: #000000, $alpha: .5);
+
+    .upload-reels-wrapper {
+        width: 450px;
+        height: 90%;
+        border-radius: .7rem;
+        background-color: #000000;
+
+
+        .reels-upload-header {
+            border-bottom: 1px solid $light-border-color;
+            padding: 1rem .5rem;
+            justify-content: space-between;
+
+
+            .cancel-btn {
+                button {
+                    background-color: $red-color;
+                    color: $white-color;
+                    padding: .5rem .8rem;
+                    border-radius: .3rem;
+                }
+            }
+
+            .share-btn {
+                button {
+                    background-color: $primary-btn-color;
+                    color: $white-color;
+                    padding: .5rem .8rem;
+                    border-radius: .3rem;
+                }
+            }
+        }
+
+        .reels-model-body {
+            width: 100%;
+            height: calc(100% - 37px);
+
+            input {
+                display: none;
+            }
+
+            label {
+                background-color: $hover;
+                color: $white-color;
+                font-size: 1.5rem;
+                font-size: 500;
+                padding: .6rem 1.5rem;
+                border-radius: .4rem;
+            }
+
+            video {
+                width: 100%;
+                height: calc(100% - 37px);
+            }
+        }
+
+    }
+
+    .close-btn {
+        button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: transparent;
+        }
+    }
+}

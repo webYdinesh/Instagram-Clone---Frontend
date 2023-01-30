@@ -1,0 +1,113 @@
+@import "../../variables";
+
+.profile-edit-container {
+    width: 82%;
+    background: $gray-bg-color;
+    min-height: 100vh;
+
+    .profile-edit-section {
+        width: 60%;
+        padding: 4rem 2rem;
+        border-radius: .6rem;
+        background-color: #000;
+        justify-content: flex-start;
+        gap: 5rem;
+
+        .profile-edit-top-section {
+            gap: 1.5rem;
+
+            .profile-img {
+                label {
+                    img {
+                        width: 10rem;
+                        height: 10rem;
+                        border-radius: 50%;
+                        border: 2px dashed $white-color;
+                    }
+                }
+
+                input {
+                    display: none;
+                }
+            }
+
+            .change-btn {
+                label {
+                    font-size: 1.4rem;
+                    padding: .5rem 1rem;
+                    background: transparent;
+                    color: $primary-btn-color;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .update-name-bio {
+            form {
+                align-items: flex-end;
+                gap: 3rem;
+
+                .input-wrapper {
+                    gap: 2rem;
+                    justify-content: flex-end;
+
+                    label {
+                        color: $white-color;
+                        font-size: 1.6rem;
+                        font-weight: 500;
+                    }
+
+                    input {
+                        width: 350px;
+                        height: 3.5rem;
+                        border: 1px solid $light-border-color;
+                        background: transparent;
+                        border-radius: .4rem;
+                        padding-left: .8rem;
+                        color: $white-color;
+                        font-size: 1.4rem;
+
+                        &:focus {
+                            outline: 1px solid $white-color;
+
+                        }
+                    }
+                }
+
+                .bio-input {
+                    textarea {
+                        width: 350px;
+                        height: 150px;
+                        resize: none;
+                        border-radius: .4rem;
+                        background: transparent;
+                        font-family: "Poppins", sans-serif;
+                        padding: .8rem;
+                        font-size: 1.4rem;
+                        border: 1px solid $light-border-color;
+                        color: $white-color;
+                        outline: none;
+
+                        &:focus {
+                            outline: 1px solid $white-color;
+                        }
+                    }
+                }
+
+                .update-btn {
+                    width: 100%;
+                    text-align: center;
+
+                    button {
+                        font-size: 1.6rem;
+                        background: $primary-btn-color;
+                        color: $white-color;
+                        padding: .9rem 1.5rem;
+                        border-radius: .4rem;
+
+                    }
+                }
+            }
+        }
+    }
+}

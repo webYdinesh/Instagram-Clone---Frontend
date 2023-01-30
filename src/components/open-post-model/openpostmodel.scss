@@ -1,0 +1,148 @@
+@import "../../variables";
+
+.post-model-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    height: 100vh;
+    background-color: rgba($color: #000000, $alpha: 0.6);
+    overflow: hidden;
+
+    .post-model-content-wrapper {
+        width: 60%;
+        display: grid;
+        grid-template-columns: 60% 40%;
+        border-radius: .6rem;
+        background-color: #000000;
+        height: 750px;
+        border: 1px solid $light-border-color;
+
+        .post-model-image-side {
+            border-radius: .6rem;
+            padding: 1rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .post-model-left-section {
+            padding: .5rem 1.5rem;
+            height: 750px;
+
+
+            .post-model-header {
+                justify-content: flex-start;
+                gap: 1.5rem;
+                border-bottom: 1px solid $light-border-color;
+
+                img {
+                    width: 4rem;
+                    border-radius: 50%;
+                }
+
+                h6 {
+                    font-size: 1.3rem;
+                    font-weight: 500;
+                }
+            }
+
+            .post-model-description-comments {
+                height: calc(100% - 200px);
+                overflow-y: scroll;
+
+                .post-model-description {
+                    padding: 2rem 0rem;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    gap: 1.5rem;
+
+                    img {
+                        width: 4rem;
+                        border-radius: 50%;
+                    }
+
+                    .description {
+                        gap: 1rem;
+
+
+                        span {
+                            font-size: 1.3rem;
+                            font-weight: 500;
+                        }
+
+                        p {
+                            display: inline;
+                            font-size: 1.3rem;
+                            line-height: 1.8;
+                        }
+                    }
+                }
+
+                // .comment-container {}
+            }
+
+            .post-model-bottom-section {
+                .user-react-section {
+                    justify-content: space-between;
+                    border-top: 1px solid $light-border-color;
+                    padding: 1.5rem .5rem;
+
+                    button {
+                        background: transparent;
+                    }
+
+                    .like-comment {
+                        gap: 1.5rem;
+                    }
+                }
+
+                .post-model-footer {
+                    p {
+                        font-size: 1.3rem;
+                        font-weight: 500;
+                    }
+                }
+
+                .comment-input {
+                    margin-top: 2rem;
+                    border-top: 1px solid $light-border-color;
+
+
+                    form {
+                        textarea {
+                            width: 100%;
+                            outline: none;
+                            font-family: "Poppins", sans-serif;
+                            background-color: #000000;
+                            color: $white-color;
+                            resize: none;
+                            font-size: 1.4rem;
+                            padding: .7rem 1rem;
+                        }
+
+                        button {
+                            color: $primary-btn-color;
+                            background: transparent;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .close-btn {
+        position: absolute;
+        right: 5rem;
+        top: 3rem;
+
+        button {
+            background: transparent;
+        }
+    }
+}

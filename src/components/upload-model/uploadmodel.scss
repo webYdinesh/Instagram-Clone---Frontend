@@ -1,0 +1,127 @@
+@import "../../variables";
+
+.upload-model-container {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.438);
+    position: fixed;
+    z-index: 400;
+    top: 0;
+    left: 0;
+
+    .grid-model {
+        display: grid;
+        grid-template-columns: 60% 40%;
+        width: 800px;
+        height: 600px;
+    }
+
+    .inner-model {
+        background-color: $light-border-color;
+        border-radius: .7rem;
+
+        .imageActive {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: .7rem 1.5rem !important;
+
+            button {
+                background-color: transparent;
+                font-weight: 600;
+                color: $primary-btn-color;
+            }
+
+        }
+
+        .image-preview-side {
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .post-caption-side {
+            padding: 1rem;
+
+            .user-profile {
+                justify-content: flex-start;
+                gap: 1rem;
+                margin-bottom: 1.5rem;
+
+                img {
+                    width: 4rem;
+                    border-radius: 50%;
+                }
+
+                p {
+                    font-size: 1.3rem;
+                    font-weight: 500;
+                }
+            }
+
+            .caption-input {
+                textarea {
+                    width: 100%;
+                    height: 200px;
+                    resize: none;
+                    background: transparent;
+                    font-family: "Poppins", sans-serif;
+                    padding: .5rem;
+                    font-size: 1.4rem;
+                    color: $white-color;
+                    outline: none;
+                }
+            }
+
+            .emoji-section {
+                justify-content: space-between;
+
+                button {
+                    background: transparent;
+                }
+            }
+        }
+
+        .model-header {
+            border-bottom: 1px solid $link-text-color;
+            padding: .7rem 0rem;
+        }
+
+        .model-body {
+            height: 600px;
+            gap: 1.4rem;
+            width: 800px;
+
+            span {
+                font-size: 1.8rem;
+            }
+
+            label {
+                font-size: 1.4rem;
+                color: $white-color;
+                font-weight: 500;
+                background-color: $primary-btn-color;
+                padding: .7rem 1.5rem;
+                border-radius: .5rem;
+                cursor: pointer;
+            }
+
+            input {
+                display: none;
+            }
+        }
+    }
+
+    .close-btn {
+        position: absolute;
+        right: 5rem;
+        top: 3rem;
+
+        button {
+            background: transparent;
+            ;
+        }
+    }
+}
