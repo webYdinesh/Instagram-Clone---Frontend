@@ -9,8 +9,9 @@ const RequireUserAuth = () => {
         const { status } = await axiosInstance("/user/profile/me");
         if (status === "ok") {
             return navigate("/");
+        } else {
+            navigate("/home");
         }
-        navigate("/home");
     };
     useEffect(() => {
         RequireUserHandler();

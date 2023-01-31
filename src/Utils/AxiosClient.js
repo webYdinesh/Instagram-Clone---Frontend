@@ -37,12 +37,15 @@ axiosInstance.interceptors.response.use(
                 setTokenFromLocalStorage("authToken", refreshToken);
                 config.headers.authorization = `Bearer ${refreshToken}`;
                 return axios(config);
+            } else {
+                removeTokenFromLocalStorage("authToken");
+                window.location.replace("/home", "_self");
+                Promise.reject(message);
             }
-            Promise.reject(message);
         }
         removeTokenFromLocalStorage("authToken");
         window.location.replace("/home", "_self");
-        Promise.reject(message);
+        return Promise.reject(message);
     },
     (err) => {
         return Promise.reject(err);
