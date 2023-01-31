@@ -17,7 +17,7 @@ export const createReel = createAsyncThunk(
             });
             return result;
         } catch (e) {
-            Promise.reject(e.messsage);
+            Promise.reject(e);
         } finally {
             thunkAPI.dispatch(setIsLoading(false));
         }

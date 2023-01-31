@@ -11,11 +11,7 @@ export const fetchProfile = createAsyncThunk(
             } = await axiosInstance("user/profile/me");
             return user;
         } catch (error) {
-            toast.error(error.message, {
-                position: "top-center",
-                theme: "dark",
-                autoClose: 4000,
-            });
+            return Promise.reject(error);
         } finally {
             thunkAPI.dispatch(setIsLoading(false));
         }
@@ -32,11 +28,7 @@ export const updateProfile = createAsyncThunk(
             );
             return user;
         } catch (error) {
-            toast.error(error.message, {
-                position: "top-center",
-                theme: "dark",
-                autoClose: 4000,
-            });
+            return Promise.reject(error);
         } finally {
             thunkAPI.dispatch(setIsLoading(false));
         }
@@ -53,11 +45,7 @@ export const logoutUser = createAsyncThunk("/logout", async (_, thunkAPI) => {
         });
         return;
     } catch (error) {
-        toast.error(error.message, {
-            position: "top-center",
-            theme: "dark",
-            autoClose: 4000,
-        });
+        return Promise.reject(error);
     } finally {
         thunkAPI.dispatch(setIsLoading(false));
     }

@@ -14,11 +14,7 @@ export const fetchAllPost = createAsyncThunk(
             } = await axiosInstance.get("post/all");
             return posts;
         } catch (error) {
-            toast.error(error.message, {
-                position: "top-center",
-                theme: "dark",
-                autoClose: 4000,
-            });
+            return Promise.reject(error);
         } finally {
             thunkAPI.dispatch(setIsLoading(false));
         }
@@ -36,11 +32,7 @@ export const fetchPostLikedUser = createAsyncThunk(
             );
             return result;
         } catch (error) {
-            toast.error(error.message, {
-                position: "top-center",
-                theme: "dark",
-                autoClose: 4000,
-            });
+            return Promise.reject(error);
         } finally {
             thunkAPI.dispatch(setIsLoading(false));
         }
@@ -56,7 +48,7 @@ export const postComment = createAsyncThunk(
             const { result } = await axiosInstance.post("post/comment", body);
             return result;
         } catch (error) {
-            Promise.reject(error.message);
+            Promise.reject(error);
         } finally {
             thunkAPI.dispatch(setIsLoading(false));
         }
@@ -74,7 +66,7 @@ export const deletePost = createAsyncThunk(
             );
             return result;
         } catch (error) {
-            Promise.reject(error.message);
+            Promise.reject(error);
         } finally {
             thunkAPI.dispatch(setIsLoading(false));
         }
@@ -90,7 +82,7 @@ export const bookmarkPost = createAsyncThunk(
 
             return result;
         } catch (error) {
-            Promise.reject(error.message);
+            Promise.reject(error);
         } finally {
             thunkAPI.dispatch(setIsLoading(false));
         }
