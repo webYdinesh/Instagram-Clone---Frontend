@@ -30,24 +30,20 @@ const Login = () => {
         try {
             dispatch(setIsLoading(true));
 
-            const {
-                message,
-                status,
-                result: { accessToken },
-            } = await axiosInstance.post("/auth/login", {
+            const res = await axiosInstance.post("/auth/login", {
                 ...inputValue,
             });
-            console.log(accessToken);
-            if (status === "ok") {
-                setTokenFromLocalStorage("authToken", accessToken);
-                toast.success(message, {
+
+            if (res.status === "ok") {
+                setTokenFromLocalStorage("authToken", res.result.accessToken);
+                toast.success(res.message, {
                     position: "top-center",
                     theme: "dark",
                     autoClose: 3000,
                 });
                 navigate("/");
             } else {
-                return toast.error(message, {
+                return toast.error(res.message, {
                     position: "top-center",
                     theme: "dark",
                     autoClose: 3000,
