@@ -16,6 +16,7 @@ import {
 import { axiosInstance } from "../../Utils/AxiosClient";
 import { followUnfollowUser } from "../../redux/slices/userSlice";
 import UserFollowCard from "../../components/user-follow-model/UserFollowCard";
+import { toast } from "react-toastify";
 
 const Profile = () => {
     const navigate = useNavigate();
@@ -57,22 +58,35 @@ const Profile = () => {
     //fetch user profile by ID
     const fetchUserProfile = async () => {
         try {
+            dispatch(setIsLoading(true));
             const {
+                message,
+                statusCode,
                 result: { user },
             } = await axiosInstance(`user/profile/${params.userId}`);
-            setisMyProfile(false);
-            setUserProfileData({
-                pic: user?.avatar?.url,
-                username: user?.username,
-                fullName: user?.fullName,
-                posts: user?.post?.reverse(),
-                followers: user?.followers,
-                followings: user?.followings,
-                bio: user?.bio,
-                userId: user._id,
-            });
+            if (statusCode === 200) {
+                setisMyProfile(false);
+                setUserProfileData({
+                    pic: user?.avatar?.url,
+                    username: user?.username,
+                    fullName: user?.fullName,
+                    posts: user?.post?.reverse(),
+                    followers: user?.followers,
+                    followings: user?.followings,
+                    bio: user?.bio,
+                    userId: user._id,
+                });
+            } else {
+                return toast.error(message, {
+                    position: "top-center",
+                    theme: "dark",
+                    autoClose: 3000,
+                });
+            }
         } catch (error) {
-            console.log(error);
+            Promise.reject(error);
+        } finally {
+            dispatch(setIsLoading(false));
         }
     };
     //fetch post data by ID

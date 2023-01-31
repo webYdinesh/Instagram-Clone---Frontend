@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { toast } from "react-toastify";
 import { axiosInstance } from "../../Utils/AxiosClient";
 import { setIsLoading } from "./appConfigSlice";
 
