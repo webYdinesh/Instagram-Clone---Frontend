@@ -104,7 +104,7 @@ const Profile = () => {
                   savedPost: userProfile?.savedPost,
               });
         setisMyProfile(true);
-    }, [userProfile]);
+    }, [userProfile, params?.userId]);
 
     //followUnfollowHandler
     const followUnfollowHandler = async () => {
