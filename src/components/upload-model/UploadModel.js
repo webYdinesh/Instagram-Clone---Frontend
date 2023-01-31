@@ -51,7 +51,7 @@ const UploadModel = () => {
             await dispatch(fetchProfile());
             dispatch(setIsUploadModel(false));
         } catch (error) {
-            console.log(error);
+            Promise.reject(error);
         } finally {
             dispatch(setIsLoading(false));
         }

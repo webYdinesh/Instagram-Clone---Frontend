@@ -36,7 +36,7 @@ const Login = () => {
                     ...inputValue,
                 }
             );
-            console.log(data);
+
             if (data.status === "ok") {
                 setTokenFromLocalStorage("authToken", data.result.accessToken);
                 toast.success(data.message, {

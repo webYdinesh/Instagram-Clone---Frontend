@@ -24,7 +24,7 @@ const SearchModel = ({ close }) => {
             });
             setSearchResults(user);
         } catch (error) {
-            console.log(error);
+            Promise.reject(error);
         } finally {
             dispatch(setIsLoading(false));
         }

@@ -18,7 +18,7 @@ const ReelCommentModel = ({ reelData, close }) => {
         setReelComment("");
         dispatch(fetchAllReels());
     };
-    console.log(reelData?.comments);
+
     return (
         <div className="reel-comment-model-container flex">
             <div className="reel-comment-wrapper">
