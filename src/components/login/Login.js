@@ -46,6 +46,12 @@ const Login = () => {
                     autoClose: 3000,
                 });
                 navigate("/");
+            } else {
+                return toast.error(message, {
+                    position: "top-center",
+                    theme: "dark",
+                    autoClose: 3000,
+                });
             }
         } catch (error) {
             return toast.error(error.message, {
