@@ -35,7 +35,12 @@ const Login = () => {
             });
 
             if (res.status === "ok") {
-                setTokenFromLocalStorage("authToken", res.result.accessToken);
+                if (res?.result) {
+                    setTokenFromLocalStorage(
+                        "authToken",
+                        res?.result?.accessToken
+                    );
+                }
                 toast.success(res.message, {
                     position: "top-center",
                     theme: "dark",
