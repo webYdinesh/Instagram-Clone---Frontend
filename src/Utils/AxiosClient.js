@@ -40,7 +40,7 @@ axiosInstance.interceptors.response.use(
             } else {
                 removeTokenFromLocalStorage("authToken");
                 window.location.replace("/home", "_self");
-                Promise.reject(message);
+                return Promise.reject(message);
             }
         }
         removeTokenFromLocalStorage("authToken");
