@@ -9,14 +9,8 @@ const RequireUserAuth = () => {
         const { status } = await axiosInstance("/user/profile/me");
         if (status === "ok") {
             return navigate("/");
-<<<<<<< HEAD
         } else {
             navigate("/home");
-=======
-        }else{
-            
-        navigate("/home");
->>>>>>> 5e371d2a6b6f966551a8f55c09c0ed3b47eb3b73
         }
     };
     useEffect(() => {
