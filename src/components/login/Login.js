@@ -37,6 +37,7 @@ const Login = () => {
             } = await axiosInstance.post("/auth/login", {
                 ...inputValue,
             });
+            console.log(accessToken);
             if (status === "ok") {
                 setTokenFromLocalStorage("authToken", accessToken);
                 toast.success(message, {

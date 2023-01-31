@@ -28,7 +28,7 @@ axiosInstance.interceptors.response.use(
         if (statusCode === 401 && !config._retry) {
             config._retry = true;
             const response = await axios(
-                "http://localhost:5000/api/v1/auth/refresh",
+                "https://instagram-clone-backend-alpha.vercel.app/api/v1/auth/refresh",
                 { withCredentials: true }
             );
             if (response.data.status === "ok") {
@@ -39,12 +39,12 @@ axiosInstance.interceptors.response.use(
                 return axios(config);
             } else {
                 removeTokenFromLocalStorage("authToken");
-                window.location.replace("/home", "_self");
+                window.location.replace("/login", "_self");
                 return Promise.reject(message);
             }
         }
         removeTokenFromLocalStorage("authToken");
-        window.location.replace("/home", "_self");
+        window.location.replace("/login", "_self");
         return Promise.reject(message);
     },
     (err) => {
