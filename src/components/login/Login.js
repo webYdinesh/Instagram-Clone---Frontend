@@ -1,9 +1,9 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { setIsLoading } from "../../redux/slices/appConfigSlice";
-import { axiosInstance } from "../../Utils/AxiosClient";
 import { setTokenFromLocalStorage } from "../../Utils/LocalStorageManager";
 import { BlueButton } from "../buttons/Button";
 import Logo from "../company-logo/Logo";
@@ -30,32 +30,30 @@ const Login = () => {
         try {
             dispatch(setIsLoading(true));
 
-            const res = await axiosInstance.post("/auth/login", {
-                ...inputValue,
-            });
-
-            if (res.status === "ok") {
-                if (res?.result) {
-                    setTokenFromLocalStorage(
-                        "authToken",
-                        res?.result?.accessToken
-                    );
+            const { data } = await axios.post(
+                "https://instagram-clone-backend-alpha.vercel.app/api/v1/auth/login",
+                {
+                    ...inputValue,
                 }
-                toast.success(res.message, {
+            );
+            console.log(data);
+            if (data.status === "ok") {
+                setTokenFromLocalStorage("authToken", data.result.accessToken);
+                toast.success(data.message, {
                     position: "top-center",
                     theme: "dark",
                     autoClose: 3000,
                 });
                 navigate("/");
             } else {
-                return toast.error(res.message, {
+                return toast.error(data.message, {
                     position: "top-center",
                     theme: "dark",
                     autoClose: 3000,
                 });
             }
-        } catch (error) {
-            return toast.error(error.message, {
+        } catch (e) {
+            toast.error(e.message, {
                 position: "top-center",
                 theme: "dark",
                 autoClose: 3000,

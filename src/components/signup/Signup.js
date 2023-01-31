@@ -5,9 +5,9 @@ import { BlueButton } from "../buttons/Button";
 import Logo from "../company-logo/Logo";
 import Footer from "../footer/Footer";
 import "./signup.scss";
-import { axiosInstance } from "../../Utils/AxiosClient";
 import { useDispatch } from "react-redux";
 import { setIsLoading } from "../../redux/slices/appConfigSlice";
+import axios from "axios";
 const Signup = () => {
     const navigate = useNavigate();
 
@@ -30,15 +30,31 @@ const Signup = () => {
         try {
             dispatch(setIsLoading(true));
 
-            const response = await axiosInstance.post("/auth/signup", {
-                ...inputValue,
-            });
-            navigate("/login");
-        } catch (error) {
-            return toast.error(error.message, {
+            const { data } = await axios.post(
+                "https://instagram-clone-backend-alpha.vercel.app/api/v1/auth/signup",
+                {
+                    ...inputValue,
+                }
+            );
+            if (data.status === "ok") {
+                toast.success(data.message, {
+                    position: "top-center",
+                    theme: "dark",
+                    autoClose: 3000,
+                });
+                navigate("/login");
+            } else {
+                return toast.error(data.message, {
+                    position: "top-center",
+                    theme: "dark",
+                    autoClose: 3000,
+                });
+            }
+        } catch (e) {
+            toast.error(e.message, {
                 position: "top-center",
                 theme: "dark",
-                autoClose: 8000,
+                autoClose: 3000,
             });
         } finally {
             dispatch(setIsLoading(false));
