@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Outlet } from "react-router-dom";
 import { fetchAllPost } from "../../redux/slices/postSlice";
 import Avatar from "../avatar/Avatar";
 import FollowSuggestion from "../follow-suggestions/FollowSuggestion";
@@ -34,6 +35,7 @@ const Feed = () => {
             <section className="suggestion">
                 <FollowSuggestion />
             </section>
+            <Outlet />
         </section>
     );
 };

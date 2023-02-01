@@ -5,7 +5,7 @@ import { HiOutlineBookmark } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
 import Footer from "../../components/footer/Footer";
 import "./profile.scss";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, Outlet, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
     fetchProfile,
@@ -346,7 +346,15 @@ const Profile = () => {
                                                     return (
                                                         <Link
                                                             key={_id}
-                                                            to={`/post/${_id}`}
+                                                            // to={`${
+                                                            //     isMyProfile &&
+                                                            //     "profile"
+                                                            // }/post/${_id}`}
+                                                            to={
+                                                                isMyProfile
+                                                                    ? `profile/post/${_id}`
+                                                                    : `/post/${_id}`
+                                                            }
                                                             onClick={() =>
                                                                 dispatch(
                                                                     setIsSinglePostModel(
@@ -417,7 +425,11 @@ const Profile = () => {
                                                     return (
                                                         <Link
                                                             key={_id}
-                                                            to={`/post/${_id}`}
+                                                            to={`${
+                                                                isMyProfile
+                                                                    ? "profile"
+                                                                    : "user/${userId}"
+                                                            }/post/${_id}`}
                                                             onClick={() =>
                                                                 dispatch(
                                                                     setIsSinglePostModel(
@@ -473,7 +485,7 @@ const Profile = () => {
                     </section>
                 </div>
             </div>
-
+            {!isMyProfile && <Outlet />}
             <Footer />
         </main>
     );

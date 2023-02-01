@@ -14,7 +14,7 @@ import {
     fetchProfile,
     setIsSinglePostModel,
 } from "../../redux/slices/appConfigSlice";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import PostOptionModel from "../post-options-model/PostOptionModel";
 const SinglePost = ({
     postDetails: {
@@ -61,7 +61,7 @@ const SinglePost = ({
     const bookmarkHandler = async () => {
         setIsSaved(!isSaved);
         await dispatch(bookmarkPost({ targetPostId: _id }));
-        dispatch(fetchProfile());
+        await dispatch(fetchProfile());
     };
     useEffect(() => {
         curUser?.savedPost?.forEach((post) => {

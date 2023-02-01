@@ -31,6 +31,12 @@
 
         .follow-model-body {
             padding: .5rem;
+            overflow: scroll;
+            height: calc(300px - 38px);
+
+            &::-webkit-scrollbar {
+                display: block;
+            }
 
             .user-container {
                 justify-content: space-between;

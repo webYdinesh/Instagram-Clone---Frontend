@@ -50,28 +50,32 @@ function App() {
                     <Route element={<RequireUserAuth />}>
                         <Route exect path="/" element={<Home />}>
                             <Route exect path="/" element={<Feed />} />
-
                             <Route
                                 exect
-                                path="/profile"
-                                element={<Profile />}
+                                path="/post/:postId"
+                                element={<Feed />}
                             />
 
+                            <Route exect path="/profile" element={<Profile />}>
+                                <Route
+                                    path="profile/post/:postId"
+                                    element={<Profile />}
+                                />
+                            </Route>
+
                             <Route
-                                exect
                                 path="/account/edit"
                                 element={<ProfileEdit />}
                             />
                             <Route
-                                exect
                                 path="/user/:userId"
                                 element={<Profile />}
-                            />
+                            ></Route>
                             <Route
-                                exect
-                                path="/post/:postId"
+                                path="/user/:userId/post/:postId"
                                 element={<Profile />}
                             />
+
                             <Route exect path="/reels" element={<Reels />} />
                         </Route>
                         <Route
