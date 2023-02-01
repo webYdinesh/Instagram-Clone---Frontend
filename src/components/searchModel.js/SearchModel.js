@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
 import { useDispatch } from "react-redux";
@@ -29,6 +29,17 @@ const SearchModel = ({ close }) => {
             dispatch(setIsLoading(false));
         }
     };
+    useEffect(() => {
+        if (!searchValue) {
+            return;
+        }
+        const timeOutId = setTimeout(() => {
+            searchHandler();
+        }, 1000);
+        return () => {
+            clearTimeout(timeOutId);
+        };
+    }, [searchValue]);
     const navigateProfile = (userId) => {
         document.title = "Instagram";
         close(false);
